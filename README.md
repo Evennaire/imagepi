@@ -35,7 +35,7 @@
 
 + 安装并运行mjpg-streamer
 
-+ - 安装：需要先安装依赖库，然后下载源码编译，参考[https://github.com/cncjs/cncjs/wiki/Setup-Guide:-Raspberry-Pi-%7C-MJPEG-Streamer-Install-&-Setup-&-FFMpeg-Recording](https://github.com/cncjs/cncjs/wiki/Setup-Guide:-Raspberry-Pi-|-MJPEG-Streamer-Install-&-Setup-&-FFMpeg-Recording)
+  + 安装：需要先安装依赖库，然后下载源码编译，参考[https://github.com/cncjs/cncjs/wiki/Setup-Guide:-Raspberry-Pi-%7C-MJPEG-Streamer-Install-&-Setup-&-FFMpeg-Recording](https://github.com/cncjs/cncjs/wiki/Setup-Guide:-Raspberry-Pi-|-MJPEG-Streamer-Install-&-Setup-&-FFMpeg-Recording)
 
   - 运行：
 
@@ -45,17 +45,17 @@
 
   - 640x360表示推流分辨率，8080表示端口号，都可以自行调整，适当调低分辨率可以减少延迟
 
-  - 浏览器打开http://树莓派ip:8080即为mjpg-streamer自带页面，想直接获取视频内容可以在html中使用标签<img src=http://树莓派ip:8080/?action=stream />
+  - 浏览器打开`http://{pi_ip}:8080`即为mjpg-streamer自带页面，想直接获取视频内容可以在html中使用标签`<img src=http://{pi_ip}:8080/?action=stream />`
 
 + 安装opencv、tflite等
 
-+ `pi`文件夹拷贝至树莓派，运行
++ 将`pi/`文件夹拷贝至树莓派，运行
 
   ```
   python3 classify_picamera.py --model model.tflite --labels synset_words.txt
   ```
 
-+ 树莓派对准浏览器界面上的图像，如果仍未开始运行可以尝试刷新浏览器。
++ 树莓派对准浏览器界面上的图像，刷新浏览器后开始运行
 
 ## 图像识别
 
