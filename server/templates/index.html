@@ -1,0 +1,59 @@
+<html>
+  <head>
+  </head>
+  <body>
+    <div style="width:100%;text-align:center;">
+      <p id="pred"></p>
+      <p id="gt"></p>
+      <div style="display: inline-block;">
+        <img id="cam" width="200" height="150" />
+      </div>
+      <div style="display: inline-block;">
+        <p id="correct"></p>
+        <p>ACC: <span id="acc" style="color:red;"></span> of <span id="test_num" style="color:red;"></span> pictures</p>
+        <p>FPS: <span id="fps" style="color:red;"></span></p>
+        <p>CPU usage: <span id="cpu" style="color:red;"></span>%</p>
+        <p>Memory Usage: <span id="mem" style="color:red;"></span> MB</p>
+      </div>
+    </div>
+    <div style="width:100%;text-align:center;">
+      <button id="start_button" type="button">Reset</button>
+    </div>
+    <div style="width:100%;text-align:center;position:relative;top:30%;">
+      <form>
+        <input id="width" name="width" value="420"/>
+        <input id="height" name="height" value="250"/>
+        <button id="button" type="button">Resize</button>
+      </form>
+      <img id="img" height="250" width="420" src="/static/images/valid/valid_1.jpeg"/>
+    </div>
+  </body>
+</html>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.1/socket.io.js" crossorigin="anonymous"></script>
+<script type="text/javascript" charset="utf-8">
+  var socket = io();
+  socket.on('connect', function() {
+    socket.emit('connected', "Connected!");
+  });
+  socket.on('res',function (data) {
+    document.getElementById("pred").innerHTML = "P: " + data.pred;
+    document.getElementById("gt").innerHTML   = "T: " + data.gt;
+    document.getElementById("correct").innerHTML = data.correct;
+    document.getElementById("fps").innerHTML = data.fps;
+    document.getElementById("acc").innerHTML = data.acc;
+    document.getElementById("test_num").innerHTML = data.test_num;
+    document.getElementById("cpu").innerHTML = data.cpu;
+    document.getElementById("mem").innerHTML = data.mem;
+    document.getElementById("img").src = data.img_url;
+    socket.emit('pi', "new image");
+  });
+  document.getElementById("start_button").onclick = function() {
+    socket.emit('reset', "Reset and start!");
+  }
+  document.getElementById("button").onclick = function() {
+      document.getElementById("img").style.width = document.getElementById("width").value;
+      document.getElementById("img").style.height = document.getElementById("height").value;
+    }
+  document.getElementById("cam").src = "http://" + {{ pi_ip | tojson }} + ":8080/?action=stream";
+</script>

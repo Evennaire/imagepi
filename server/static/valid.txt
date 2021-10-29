@@ -1,0 +1,100 @@
+1 n02676566 acoustic guitar
+2 n07248320 book jacket, dust cover, dust jacket, dust wrapper
+3 n03627232 knot
+4 n02113023 Pembroke, Pembroke Welsh corgi
+5 n04418357 theater curtain, theatre curtain
+6 n02843684 birdhouse
+7 n04479046 trench coat
+8 n01968897 chambered nautilus, pearly nautilus, nautilus
+9 n03908714 pencil sharpener
+10 n01756291 sidewinder, horned rattlesnake, Crotalus cerastes
+11 n02666196 abacus
+12 n02091467 Norwegian elkhound, elkhound
+13 n02097474 Tibetan terrier, chrysanthemum dog
+14 n02892201 brass, memorial tablet, plaque
+15 n01665541 leatherback turtle, leatherback, leathery turtle, Dermochelys coriacea
+16 n04152593 screen, CRT screen
+17 n03272562 electric locomotive
+18 n04328186 stopwatch, stop watch
+19 n02128385 leopard, Panthera pardus
+20 n03443371 goblet
+21 n03109150 corkscrew, bottle screw
+22 n04371430 swimming trunks, bathing trunks
+23 n02730930 apron
+24 n03207941 dishwasher, dish washer, dishwashing machine
+25 n02281406 sulphur butterfly, sulfur butterfly
+26 n02906734 broom
+27 n04376876 syringe
+28 n01820546 lorikeet
+29 n03459775 grille, radiator grille
+30 n02364673 guinea pig, Cavia cobaya
+31 n02127052 lynx, catamount
+32 n03891251 park bench
+33 n02086646 Blenheim spaniel
+34 n03733805 measuring cup
+35 n04442312 toaster
+36 n02094433 Yorkshire terrier
+37 n03763968 military uniform
+38 n03384352 forklift
+39 n03291819 envelope
+40 n01773157 black and gold garden spider, Argiope aurantia
+41 n02111889 Samoyed, Samoyede
+42 n02011460 bittern
+43 n02093647 Bedlington terrier
+44 n07697537 hotdog, hot dog, red hot
+45 n02099601 golden retriever
+46 n15075141 toilet tissue, toilet paper, bathroom tissue
+47 n01775062 wolf spider, hunting spider
+48 n02124075 Egyptian cat
+49 n03032252 cinema, movie theater, movie theatre, movie house, picture palace
+50 n02951358 canoe
+51 n02097130 giant schnauzer
+52 n07718472 cucumber, cuke
+53 n02109047 Great Dane
+54 n02974003 car wheel
+55 n02124075 Egyptian cat
+56 n02930766 cab, hack, taxi, taxicab
+57 n03761084 microwave, microwave oven
+58 n03773504 missile
+59 n04070727 refrigerator, icebox
+60 n06359193 web site, website, internet site, site
+61 n07583066 guacamole
+62 n03788365 mosquito net
+63 n02102318 cocker spaniel, English cocker spaniel, cocker
+64 n03840681 ocarina, sweet potato
+65 n04418357 theater curtain, theatre curtain
+66 n02704792 amphibian, amphibious vehicle
+67 n02950826 cannon
+68 n07583066 guacamole
+69 n03777754 modem
+70 n07716906 spaghetti squash
+71 n03967562 plow, plough
+72 n01694178 African chameleon, Chamaeleo chamaeleon
+73 n02787622 banjo
+74 n04152593 screen, CRT screen
+75 n03803284 muzzle
+76 n02114855 coyote, prairie wolf, brush wolf, Canis latrans
+77 n03937543 pill bottle
+78 n01616318 vulture
+79 n02391049 zebra
+80 n01910747 jellyfish
+81 n04118776 rule, ruler
+82 n03983396 pop bottle, soda bottle
+83 n02120505 grey fox, gray fox, Urocyon cinereoargenteus
+84 n07873807 pizza, pizza pie
+85 n04347754 submarine, pigboat, sub, U-boat
+86 n03803284 muzzle
+87 n04435653 tile roof
+88 n07932039 eggnog
+89 n04209239 shower curtain
+90 n07614500 ice cream, icecream
+91 n04209133 shower cap
+92 n02883205 bow tie, bow-tie, bowtie
+93 n03127925 crate
+94 n02095570 Lakeland terrier
+95 n02815834 beaker
+96 n04336792 stretcher
+97 n01753488 horned viper, cerastes, sand viper, horned asp, Cerastes cornutus
+98 n03720891 maraca
+99 n02509815 lesser panda, red panda, panda, bear cat, cat bear, Ailurus fulgens
+100 n01641577 bullfrog, Rana catesbeiana
