@@ -26,7 +26,7 @@
 + `server`文件夹下运行
 
   ```
-  flask run
+  flask run --host='0.0.0.0'
   ```
 
   在任意终端设备浏览器上打开`http://{server_ip}:5000/`。
