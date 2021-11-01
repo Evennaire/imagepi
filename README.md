@@ -46,20 +46,20 @@
 
 + 安装pip3、numpy等必要依赖
 
-  + 建议pip3 install时用whl文件安装，https://www.piwheels.org/packages.html上可找到对应的whl
+  + 建议pip3 install时用whl文件安装，[https://www.piwheels.org/packages.html](https://www.piwheels.org/packages.html)上可找到对应的whl
 
-+ 安装tf lite解释器：https://www.tensorflow.org/lite/guide/python#install_tensorflow_lite_for_python
++ 安装tf lite解释器：[https://www.tensorflow.org/lite/guide/python#install_tensorflow_lite_for_python](https://www.tensorflow.org/lite/guide/python#install_tensorflow_lite_for_python)
 
 + 安装opencv
 
   + 直接pip3 install，python3可能会出现ImportError，需手动安装出错的依赖
-  + 一种可能的安装办法：参考https://zhuanlan.zhihu.com/p/46032511安装apt依赖后，用whl文件安装opencv-python，剩下的依赖再补装一下
+  + 一种可能的安装办法：参考[https://zhuanlan.zhihu.com/p/46032511](https://zhuanlan.zhihu.com/p/46032511)安装apt依赖后，用whl文件安装opencv-python，剩下的依赖再补装一下
 
 ## 运行
 
 ### ip设置
 
-+ 获得树莓派ip地址`pi_ip`和电脑端ip地址`server_ip`
++ 获取树莓派ip地址`pi_ip`和电脑端ip地址`server_ip`
 + 在`server/app.py`中修改`pi_ip`
 + 在`pi/classify_picamera.py`中修改`server_ip`
 
@@ -83,14 +83,16 @@
 
 + 树莓派对准浏览器界面上的图像，刷新浏览器后开始运行
 
-## 图像识别
+## 图像识别说明
 
 + 验证集包含100张图片，在界面上随机显示，全部显示一遍后重新开始下一轮随机。
 + 测试集包含100张图片，同样为随机显示。测试集未公开，检查时只需要将测试集的图像和GT拷贝至电脑端`server/static`文件夹，并在`server/app.py`中修改mode参数为"test"即可。
 
-+ 存在多种版本的index和label对应关系
-  + ILSVRC2012的label版本和Caffe提供版本的不同
-  + Mobilenet使用的是Caffe版本的label [https](https://github.com/HoldenCaulfieldRye/caffe/blob/master/data/ilsvrc12/synset_words.txt)[://github.com/HoldenCaulfieldRye/caffe/blob/master/data/ilsvrc12/synset_words.](https://github.com/HoldenCaulfieldRye/caffe/blob/master/data/ilsvrc12/synset_words.txt)[txt](https://github.com/HoldenCaulfieldRye/caffe/blob/master/data/ilsvrc12/synset_words.txt)
++ 注意：存在多种版本的index和label对应关系，ILSVRC2012的label版本和Caffe提供版本的不同。
+  + 在本实验示例程序中用到的MobileNet使用的是Caffe版本的label
+
+    [https://github.com/HoldenCaulfieldRye/caffe/blob/master/data/ilsvrc12/synset_words.txt](https://github.com/HoldenCaulfieldRye/caffe/blob/master/data/ilsvrc12/synset_words.txt)
+
   + 为了统一，测试程序中检查的是：识别结果和Ground Truth的**synset标签**是否吻合
 + 在使用预训练模型时，注意输入数据的格式范围、输出index和label之间的对应关系
 
