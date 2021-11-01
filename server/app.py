@@ -4,8 +4,8 @@ import random
 import os
 import time
 
+pi_ip = "*.*.*.*"
 mode = "valid"
-pi_ip = "172.20.10.13"
 display_delay = 0.5
 
 
@@ -60,8 +60,8 @@ def result():
             res_correct = (res_label == labels[display_seq[display_idx]][0])
             test_num += 1
             true_num = true_num + 1 if res_correct else true_num
-            print(res_label, labels[display_seq[display_idx]][0], res_text, res_correct, cpu, mem)
-            send_msg(res, " ".join(labels[display_seq[display_idx]]), str(res_correct), f"{fps:0.2f}", f"{true_num / test_num:0.4f}", test_num, cpu, mem)
+            gt = " ".join(labels[display_seq[display_idx]])
+            send_msg(res, gt, str(res_correct), f"{fps:0.2f}", f"{true_num / test_num:0.4f}", test_num, cpu, mem)
         else:
             error = 'invalid post'
     return "ok"

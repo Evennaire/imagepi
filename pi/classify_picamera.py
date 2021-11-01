@@ -18,16 +18,13 @@ import json
 import time
 import socketio
 
-pi_ip = "172.20.10.13"
-server_ip = "172.20.10.2"
-
-
+server_ip = "*.*.*.*"
 sio = socketio.Client()
 sio.connect(f"http://{server_ip}:5000")
 
 post_url = f"http://{server_ip}:5000/result"
 
-cap = VideoCapture(f"http://{pi_ip}:8080/?action=stream")
+cap = VideoCapture(f"http://localhost:8080/?action=stream")
 cap.set(CAP_PROP_BUFFERSIZE, 3)
 
 ret = False
@@ -75,7 +72,7 @@ def classify_image(interpreter, image, top_k=1):
 
 @sio.on('pi')
 def on_message(data):
-    #print("message received!")
+    print("message received!")
     received_time = time.time()
     # while not ret:
     #   pass
@@ -95,7 +92,7 @@ def on_message(data):
             "cpu": cpu,
             "mem": mem}
     res = requests.post(url=post_url,data=data)
-    print(data["res"])
+    print(data)
 
 
 
