@@ -74,8 +74,6 @@ def classify_image(interpreter, image, top_k=1):
 def on_message(data):
     print("message received!")
     received_time = time.time()
-    # while not ret:
-    #   pass
 
     _, height, width, _ = interpreter.get_input_details()[0]['shape']
     image = Image.fromarray(frame.astype('uint8')).convert('RGB').resize((width, height), Image.ANTIALIAS)

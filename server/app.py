@@ -13,7 +13,7 @@ label_url = f"./static/{mode}.txt"
 display_seq = list(range(1, 101))
 random.shuffle(display_seq)
 display_idx = 0
-send_time = 0
+start_time = time.time()
 test_num = 0
 true_num = 0
 labels = {}
@@ -46,10 +46,11 @@ def index():
 @app.route("/result", methods=['POST'])
 def result():
     # 收到树莓派传来的分类结果
-    global send_time, test_num, true_num
+    global start_time, test_num, true_num
     error = None
     res = -1
-    fps_all = 1 / (time.time() - send_time)
+    fps_all = 1 / (time.time() - start_time)
+    start_time = time.time()
     if request.method == 'POST':
         if 'res' in request.form.keys():
             res = request.form['res']
@@ -61,7 +62,7 @@ def result():
             test_num += 1
             true_num = true_num + 1 if res_correct else true_num
             gt = " ".join(labels[display_seq[display_idx]])
-            send_msg(res, gt, str(res_correct), f"{fps:0.2f}", f"{true_num / test_num:0.4f}", test_num, cpu, mem)
+            send_msg(res, gt, str(res_correct), f"{fps_all:0.2f}", f"{true_num / test_num:0.4f}", test_num, cpu, mem)
         else:
             error = 'invalid post'
     return "ok"
@@ -75,10 +76,10 @@ def handle_message(message):
 @socketio.on('pi')
 def handle_message(message):
     # 收到浏览器更新图片的通知，等待display_delay(s)后通知树莓派识别图像
-    global send_time, display_delay
+    global start_time, display_delay
     time.sleep(display_delay)
     socketio.emit('pi', "new image")
-    send_time = time.time()
+    # start_time = time.time()
 
 @socketio.on('reset')
 def handle_message(message):
