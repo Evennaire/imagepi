@@ -98,6 +98,7 @@ def get_frame():
     global ret, frame, tmp
     while True:
         ret, frame = cap.read()
+        time.sleep(0.01)
 
 
 def main():

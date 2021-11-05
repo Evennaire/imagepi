@@ -7,7 +7,7 @@
 电脑端flask server和浏览器界面、树莓派分别建立socket连接。浏览器初始化后重复以下操作：
 
 1. 浏览器通知server图片已更新
-2. server等待0.5s后（树莓派获取图像有延迟，可以修改等待时间`display_delay`）通知树莓派进行图像识别，并开始计时
+2. server等待0.1s后（树莓派获取图像有延迟，可以修改等待时间`display_delay`）通知树莓派进行图像识别，并开始计时
 3. 树莓派将识别结果和系统信息通过post方法传回server
 4. server检查结果、计算用时和准确率
 5. server通知浏览器更新
@@ -83,9 +83,12 @@
 
 + 树莓派对准浏览器界面上的图像，刷新浏览器后开始运行
 
-## 图像识别说明
+## 说明
+
++ FPS的计算：树莓派传回的FPS表示进行一帧图像识别的帧率，server计算的FPS_ALL表示整个识别循环进行一轮的帧率（包括网络延迟和`display_delay`），`display_delay`可以根据系统性能自行修改。
 
 + 验证集包含100张图片，在界面上随机显示，全部显示一遍后重新开始下一轮随机。
+
 + 测试集包含100张图片，同样为随机显示。测试集未公开，检查时只需要将测试集的图像和GT拷贝至电脑端`server/static`文件夹，并在`server/app.py`中修改mode参数为"test"即可。
 
 + 注意：存在多种版本的index和label对应关系，ILSVRC2012的label版本和Caffe提供版本的不同。
@@ -94,5 +97,6 @@
     [https://github.com/HoldenCaulfieldRye/caffe/blob/master/data/ilsvrc12/synset_words.txt](https://github.com/HoldenCaulfieldRye/caffe/blob/master/data/ilsvrc12/synset_words.txt)
 
   + 为了统一，测试程序中检查的是：识别结果和Ground Truth的**synset标签**是否吻合
+  
 + 在使用预训练模型时，注意输入数据的格式范围、输出index和label之间的对应关系
 

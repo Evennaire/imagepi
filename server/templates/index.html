@@ -11,6 +11,7 @@
       <div style="display: inline-block;">
         <p id="correct"></p>
         <p>ACC: <span id="acc" style="color:red;"></span> of <span id="test_num" style="color:red;"></span> pictures</p>
+        <p>FPS_ALL: <span id="fps_all" style="color:red;"></span></p>
         <p>FPS: <span id="fps" style="color:red;"></span></p>
         <p>CPU usage: <span id="cpu" style="color:red;"></span>%</p>
         <p>Memory Usage: <span id="mem" style="color:red;"></span> MB</p>
@@ -40,6 +41,7 @@
     document.getElementById("pred").innerHTML = "P: " + data.pred;
     document.getElementById("gt").innerHTML   = "T: " + data.gt;
     document.getElementById("correct").innerHTML = data.correct;
+    document.getElementById("fps_all").innerHTML = data.fps_all;
     document.getElementById("fps").innerHTML = data.fps;
     document.getElementById("acc").innerHTML = data.acc;
     document.getElementById("test_num").innerHTML = data.test_num;
