@@ -63,6 +63,8 @@ def result():
             true_num = true_num + 1 if res_correct else true_num
             gt = " ".join(labels[display_seq[display_idx]])
             send_msg(res, gt, str(res_correct), f"{fps_all:0.2f}", f"{true_num / test_num:0.4f}", test_num, cpu, mem, f"{fps:0.2f}")
+            time.sleep(display_delay) # 延时display_delay后通知树莓派
+            socketio.emit('pi', "new image")  # 向树莓派发送pi信号说明图片已更新
         else:
             error = 'invalid post'
     return "ok"
@@ -73,13 +75,19 @@ def handle_message(message):
     print('received message: ' + message)
     send_msg()
 
-@socketio.on('pi')
-def handle_message(message):
-    # 收到浏览器更新图片的通知，等待display_delay(s)后通知树莓派识别图像
-    global start_time, display_delay
-    time.sleep(display_delay)
+# @socketio.on('pi')
+# def handle_message(message):
+#     # 收到浏览器更新图片的通知，等待display_delay(s)后通知树莓派识别图像
+#     global start_time, display_delay
+#     time.sleep(display_delay)
+#     socketio.emit('pi', "new image")
+#     # start_time = time.time()
+
+# 手动向树莓派发送更新提示
+@socketio.on('ask')
+def ask_pi(message):
     socketio.emit('pi', "new image")
-    # start_time = time.time()
+
 
 @socketio.on('reset')
 def handle_message(message):
