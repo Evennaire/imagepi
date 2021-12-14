@@ -19,6 +19,7 @@
     </div>
     <div style="width:100%;text-align:center;">
       <button id="start_button" type="button">Reset</button>
+      <button id="continue_button" type="button">Ask PI</button>
     </div>
     <div style="width:100%;text-align:center;position:relative;top:30%;">
       <form>
@@ -48,10 +49,14 @@
     document.getElementById("cpu").innerHTML = data.cpu;
     document.getElementById("mem").innerHTML = data.mem;
     document.getElementById("img").src = data.img_url;
-    socket.emit('pi', "new image");
+    // socket.emit('pi', "new image"); // 取消前端发送pi信号
   });
   document.getElementById("start_button").onclick = function() {
     socket.emit('reset', "Reset and start!");
+  };
+  document.getElementById("continue_button").onclick = function() {
+    // 手动提示树莓派图片已更新
+    socket.emit('ask', "Ask PI!")
   }
   document.getElementById("button").onclick = function() {
       document.getElementById("img").style.width = document.getElementById("width").value;
