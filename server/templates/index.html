@@ -62,5 +62,7 @@
       document.getElementById("img").style.width = document.getElementById("width").value;
       document.getElementById("img").style.height = document.getElementById("height").value;
     }
+  document.getElementById("img").style.width = document.getElementById("width").value;
+  document.getElementById("img").style.height = document.getElementById("height").value;
   document.getElementById("cam").src = "http://" + {{ pi_ip | tojson }} + ":8080/?action=stream";
 </script>
