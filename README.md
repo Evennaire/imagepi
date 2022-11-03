@@ -46,7 +46,7 @@
 
 + 安装pip3、numpy等必要依赖
 
-  + 建议pip3 install时用whl文件安装，[https://www.piwheels.org/packages.html](https://www.piwheels.org/packages.html)上可找到对应的whl
+  + 建议pip3 install时用whl文件安装，根据地址 https://www.piwheels.org/simple/[包名]/ 可找到对应的whl，如https://www.piwheels.org/simple/numpy/，下载对应的whl文件
 
 + 安装tf lite解释器：[https://www.tensorflow.org/lite/guide/python#install_tensorflow_lite_for_python](https://www.tensorflow.org/lite/guide/python#install_tensorflow_lite_for_python)
 
@@ -54,6 +54,13 @@
 
   + 直接pip3 install，python3可能会出现ImportError，需手动安装出错的依赖
   + 一种可能的安装办法：参考[https://zhuanlan.zhihu.com/p/46032511](https://zhuanlan.zhihu.com/p/46032511)安装apt依赖后，用whl文件安装opencv-python，剩下的依赖再补装一下
+
++ 安装代码运行需要的库
+
+  ```
+  sudo pip3 install Pillow
+  sudo pip3 install python-socketio
+  ```
 
 ## 运行
 
